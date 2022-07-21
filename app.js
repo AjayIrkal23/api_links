@@ -28,7 +28,7 @@ app.get('/allproducts', (req, res) => {
     } else {
         query = {}
     }
-    db.collection('product').find(queryn, { _id: 0, Name: 1 }).toArray(function(err, product) {
+    db.collection('product').find(query, { _id: 0, Name: 1 }).toArray(function(err, product) {
         if (err) throw err;
         res.send(product);
     })
